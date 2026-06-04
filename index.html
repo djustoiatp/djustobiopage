@@ -1,1 +1,260 @@
-# djustobiopage
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego Justo · DJusto Creative</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#060810;
+  --surface:#0C1020;
+  --blue:#1A3A8A;
+  --blue2:#2A5298;
+  --blue3:#4A8ED4;
+  --blue-glow:rgba(42,82,152,.2);
+  --white:#F0F4FF;
+  --muted:rgba(240,244,255,.45);
+  --dim:rgba(240,244,255,.2);
+  --border:rgba(74,142,212,.15);
+  --green:#25D366
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;max-width:480px;margin:0 auto;min-height:100vh}
+
+/* BG glow */
+body::before{content:'';position:fixed;width:400px;height:400px;background:radial-gradient(circle,rgba(42,82,152,.12) 0%,transparent 65%);top:-100px;left:50%;transform:translateX(-50%);pointer-events:none;z-index:0}
+
+/* GRID */
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(74,142,212,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(74,142,212,.015) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:0}
+
+.page{position:relative;z-index:1;padding:40px 24px 60px;display:flex;flex-direction:column;align-items:center}
+
+/* ── AVATAR ── */
+.avatar-wrap{position:relative;width:88px;height:88px;margin-bottom:16px;animation:fadeUp .8s ease forwards .1s;opacity:0}
+.avatar-ring{position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,conic-gradient(#4A8ED4,#1A3A8A,#4A8ED4) border-box}
+.avatar-ring-spin{position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,conic-gradient(transparent 60%,#4A8ED4 100%) border-box;animation:spin 4s linear infinite}
+.avatar-img{position:absolute;inset:3px;border-radius:50%;background:linear-gradient(135deg,#1A3A8A,#2A5298);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.avatar-letters{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-1px}
+
+/* ── NAME ── */
+.name{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:.5px;text-align:center;margin-bottom:4px;animation:fadeUp .8s ease forwards .2s;opacity:0}
+.name span{color:var(--blue3)}
+.role{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;animation:fadeUp .8s ease forwards .25s;opacity:0}
+
+/* Badge */
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(74,142,212,.08);border:1px solid rgba(74,142,212,.2);border-radius:100px;padding:5px 14px;margin-bottom:24px;animation:fadeUp .8s ease forwards .3s;opacity:0}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:#4A8ED4;animation:blink 2s ease infinite}
+.badge-txt{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4A8ED4}
+
+/* Divider */
+.divider{display:flex;align-items:center;gap:8px;width:100%;margin-bottom:24px;animation:fadeUp .8s ease forwards .35s;opacity:0}
+.div-line{flex:1;height:.5px;background:linear-gradient(to right,transparent,var(--border),transparent)}
+.div-logo{width:28px;height:28px;flex-shrink:0}
+
+/* ── LINKS ── */
+.links{width:100%;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+
+.btn{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:8px;text-decoration:none;transition:all .25s ease;opacity:0}
+.btn:nth-child(1){animation:fadeUp .8s ease forwards .4s}
+.btn:nth-child(2){animation:fadeUp .8s ease forwards .5s}
+.btn:nth-child(3){animation:fadeUp .8s ease forwards .6s}
+
+.btn:hover{transform:translateX(4px)}
+
+.btn-primary{background:linear-gradient(135deg,#0C1830,#162040);border:1px solid rgba(74,142,212,.3)}
+.btn-secondary{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
+.btn-wa{background:linear-gradient(135deg,#071510,rgba(37,211,102,.08));border:1px solid rgba(37,211,102,.25)}
+
+.btn-icon{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.btn-primary .btn-icon{background:rgba(74,142,212,.15)}
+.btn-secondary .btn-icon{background:rgba(255,255,255,.06)}
+.btn-wa .btn-icon{background:rgba(37,211,102,.12)}
+
+.btn-body{flex:1}
+.btn-title{font-size:13px;font-weight:500;color:var(--white);display:block}
+.btn-desc{font-size:11px;color:var(--muted);display:block;margin-top:1px}
+.btn-arr{font-size:13px;color:rgba(74,142,212,.5)}
+
+/* ── SERVIÇOS ── */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;margin-bottom:28px;animation:fadeUp .8s ease forwards .65s;opacity:0}
+.svc{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:12px 8px;text-align:center;transition:border-color .2s}
+.svc:hover{border-color:rgba(74,142,212,.3)}
+.svc-icon{font-size:18px;display:block;margin-bottom:6px}
+.svc-label{font-size:9.5px;color:var(--muted);letter-spacing:.5px;line-height:1.4}
+
+/* ── DEPOIMENTOS ── */
+.reviews-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;animation:fadeUp .8s ease forwards .7s;opacity:0}
+
+.reviews{width:100%;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.review{background:rgba(255,255,255,.025);border:.5px solid var(--border);border-left:2px solid #2A5298;border-radius:0 6px 6px 0;padding:12px 14px;opacity:0}
+.review:nth-child(1){animation:fadeUp .8s ease forwards .75s}
+.review:nth-child(2){animation:fadeUp .8s ease forwards .85s}
+.review:nth-child(3){animation:fadeUp .8s ease forwards .95s}
+
+.review-top{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.review-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;flex-shrink:0;font-family:'Syne',sans-serif}
+.av1{background:rgba(74,142,212,.2);color:#4A8ED4}
+.av2{background:rgba(37,211,102,.15);color:#25D366}
+.av3{background:rgba(212,175,55,.15);color:#D4AF37}
+.review-info{flex:1}
+.review-name{font-size:12px;font-weight:500;color:var(--white);display:block}
+.review-role{font-size:10px;color:var(--muted);display:block}
+.review-stars{font-size:10px;color:#D4AF37;letter-spacing:1px}
+.review-text{font-size:12px;color:var(--muted);line-height:1.65;font-style:italic}
+.review-text strong{color:var(--white);font-style:normal;font-weight:500}
+
+/* ── FOOTER ── */
+.footer{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:1.5px;text-transform:uppercase;animation:fadeUp .8s ease forwards 1.05s;opacity:0}
+
+/* ── LOGO SVG ── */
+.logo-svg .d{fill:#1A3A8A}
+.logo-svg .j{fill:#555}
+.logo-svg .net-line{stroke:#4A8ED4;stroke-width:1.5;fill:none}
+.logo-svg .net-dot{fill:#4A8ED4}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- AVATAR -->
+  <div class="avatar-wrap">
+    <div class="avatar-ring"></div>
+    <div class="avatar-ring-spin"></div>
+    <div class="avatar-img">
+      <svg class="logo-svg" viewBox="0 0 80 60" width="60" height="45">
+        <!-- D -->
+        <path class="d" d="M4 6h14c10 0 17 7 17 18s-7 18-17 18H4V6zm8 8v20h6c5 0 9-4 9-10s-4-10-9-10h-6z"/>
+        <!-- J -->
+        <path class="j" d="M46 6h8v28c0 4-3 8-9 8-5 0-8-3-8-7h7c0 1.5.5 2 1 2s1-.5 1-2V6z"/>
+        <!-- network -->
+        <line class="net-line" x1="36" y1="24" x2="44" y2="18"/>
+        <line class="net-line" x1="36" y1="24" x2="44" y2="30"/>
+        <line class="net-line" x1="44" y1="18" x2="52" y2="24"/>
+        <line class="net-line" x1="44" y1="30" x2="52" y2="24"/>
+        <line class="net-line" x1="44" y1="18" x2="44" y2="30"/>
+        <line class="net-line" x1="36" y1="24" x2="52" y2="24"/>
+        <circle class="net-dot" cx="36" cy="24" r="2.5"/>
+        <circle class="net-dot" cx="44" cy="18" r="2"/>
+        <circle class="net-dot" cx="44" cy="30" r="2"/>
+        <circle class="net-dot" cx="52" cy="24" r="2.5"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- NAME -->
+  <h1 class="name">Diego <span>Justo</span></h1>
+  <p class="role">Design & IA · Marketing Digital</p>
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    <span class="badge-txt">DJusto Creative</span>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <svg class="div-logo" viewBox="0 0 28 28">
+      <circle cx="14" cy="14" r="13" fill="none" stroke="rgba(74,142,212,.3)" stroke-width="1"/>
+      <text x="14" y="19" text-anchor="middle" font-size="11" font-weight="700" font-family="sans-serif" fill="#4A8ED4">DJ</text>
+    </svg>
+    <div class="div-line"></div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="links">
+
+    <a href="https://djustoiatp.github.io/biopage" class="btn btn-primary" target="_blank">
+      <div class="btn-icon">🚀</div>
+      <div class="btn-body">
+        <span class="btn-title">Bio Page Exclusiva</span>
+        <span class="btn-desc">Transforme o link da sua bio · R$97</span>
+      </div>
+      <span class="btn-arr">→</span>
+    </a>
+
+    <a href="https://instagram.com/djustocreative.ia" class="btn btn-secondary" target="_blank">
+      <div class="btn-icon">📸</div>
+      <div class="btn-body">
+        <span class="btn-title">Instagram</span>
+        <span class="btn-desc">@djustocreative.ia · Design & IA</span>
+      </div>
+      <span class="btn-arr">→</span>
+    </a>
+
+    <a href="https://wa.me/5581998011476?text=Ol%C3%A1+Diego%21+Vi+seu+perfil+e+quero+saber+mais." class="btn btn-wa" target="_blank">
+      <div class="btn-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </div>
+      <div class="btn-body">
+        <span class="btn-title">Falar com Diego</span>
+        <span class="btn-desc">(81) 99801-1476 · Resposta rápida</span>
+      </div>
+      <span class="btn-arr">→</span>
+    </a>
+
+  </div>
+
+  <!-- SERVIÇOS -->
+  <div class="services">
+    <div class="svc"><span class="svc-icon">🎨</span><span class="svc-label">Bio Page Exclusiva</span></div>
+    <div class="svc"><span class="svc-icon">🤖</span><span class="svc-label">Design com IA</span></div>
+    <div class="svc"><span class="svc-icon">📈</span><span class="svc-label">Tráfego Pago</span></div>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <p class="reviews-title">⭐ o que dizem os clientes</p>
+
+  <div class="reviews">
+
+    <div class="review">
+      <div class="review-top">
+        <div class="review-av av1">MC</div>
+        <div class="review-info">
+          <span class="review-name">Mariana Costa</span>
+          <span class="review-role">Salão Studio M · Recife</span>
+        </div>
+        <span class="review-stars">★★★★★</span>
+      </div>
+      <p class="review-text">"Pedi na sexta e na sábado já tava no ar. <strong>Minha página ficou completamente diferente</strong> — vários clientes comentaram na semana seguinte."</p>
+    </div>
+
+    <div class="review">
+      <div class="review-top">
+        <div class="review-av av2">RL</div>
+        <div class="review-info">
+          <span class="review-name">Ricardo Lima</span>
+          <span class="review-role">Barbearia RL · Olinda</span>
+        </div>
+        <span class="review-stars">★★★★★</span>
+      </div>
+      <p class="review-text">"Simples, rápido e com a cara do meu negócio. <strong>Vale muito mais do que cobrou.</strong> Já indiquei pra dois amigos."</p>
+    </div>
+
+    <div class="review">
+      <div class="review-top">
+        <div class="review-av av3">FS</div>
+        <div class="review-info">
+          <span class="review-name">Fernanda Silva</span>
+          <span class="review-role">Doces & Cia · Caruaru</span>
+        </div>
+        <span class="review-stars">★★★★★</span>
+      </div>
+      <p class="review-text">"Achei que ia ser complicado mas foi só mandar as infos. <strong>Em menos de 24h tava tudo pronto</strong> e ficou lindo demais."</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <p class="footer">djusto creative · design & ia</p>
+
+</div>
+</body>
+</html>
