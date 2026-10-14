@@ -2,259 +2,319 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Diego Justo · DJusto Creative</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<meta name="description" content="Landing pages, bio pages, chatbots, designs e tráfego pago para negócios que querem vender mais. Design & IA · Marketing Digital.">
+<meta name="theme-color" content="#060810">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diego Justo · DJusto Creative">
+<meta property="og:description" content="Design & IA · Marketing Digital. Soluções feitas para o seu negócio vender mais.">
+<meta property="og:url" content="https://djustoiatp.github.io/biopage/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230C1020'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%234A8ED4'%3EDJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#060810;
-  --surface:#0C1020;
-  --blue:#1A3A8A;
-  --blue2:#2A5298;
-  --blue3:#4A8ED4;
-  --blue-glow:rgba(42,82,152,.2);
-  --white:#F0F4FF;
-  --muted:rgba(240,244,255,.45);
-  --dim:rgba(240,244,255,.2);
-  --border:rgba(74,142,212,.15);
-  --green:#25D366
+  --bg:#060810; --s:#0B0F1D; --s2:#10162A;
+  --blue:#2A5298; --blue2:#4A8ED4; --blue3:#7DB3F0;
+  --w:#F0F4FF; --m:rgba(240,244,255,.62); --d:rgba(240,244,255,.38);
+  --line:rgba(122,160,230,.14); --line2:rgba(122,160,230,.26);
+  --g:#3ECF8E; --wa:#25D366;
+  --r:16px;
 }
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;max-width:480px;margin:0 auto;min-height:100vh}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--w);
+  min-height:100vh;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+/* background */
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(600px 380px at 50% -80px, rgba(74,142,212,.22), transparent 70%),
+    radial-gradient(500px 400px at 100% 100%, rgba(42,82,152,.12), transparent 70%),
+    var(--bg);}
+.bg::after{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:44px 44px;opacity:.35;
+  mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 20%,transparent 70%);}
 
-/* BG glow */
-body::before{content:'';position:fixed;width:400px;height:400px;background:radial-gradient(circle,rgba(42,82,152,.12) 0%,transparent 65%);top:-100px;left:50%;transform:translateX(-50%);pointer-events:none;z-index:0}
+.wrap{max-width:520px;margin:0 auto;padding:48px 20px 120px}
 
-/* GRID */
-body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(74,142,212,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(74,142,212,.015) 1px,transparent 1px);background-size:36px 36px;pointer-events:none;z-index:0}
+/* header */
+header{text-align:center}
+.logo{width:96px;height:96px;margin:0 auto 20px;border-radius:28px;position:relative;
+  background:linear-gradient(145deg,#15213F,#0B1024);
+  border:1px solid var(--line2);
+  box-shadow:0 0 0 6px rgba(74,142,212,.06),0 20px 50px -10px rgba(74,142,212,.35);
+  display:grid;place-items:center}
+.logo svg{width:58px;height:58px}
+.status{position:absolute;right:-4px;bottom:-4px;width:22px;height:22px;border-radius:50%;
+  background:var(--bg);display:grid;place-items:center}
+.status i{width:12px;height:12px;border-radius:50%;background:var(--g);box-shadow:0 0 0 0 rgba(62,207,142,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(62,207,142,0)}100%{box-shadow:0 0 0 0 rgba(62,207,142,0)}}
+h1{font-family:Syne,sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1.1}
+h1 span{background:linear-gradient(90deg,var(--blue2),var(--blue3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{margin-top:8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--d);font-weight:500}
+.pitch{margin:18px auto 0;max-width:400px;color:var(--m);font-size:15.5px}
+.pitch b{color:var(--w);font-weight:600}
+.avail{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:7px 14px;border-radius:99px;
+  background:rgba(62,207,142,.08);border:1px solid rgba(62,207,142,.22);color:#8FE6BD;font-size:12.5px;font-weight:500}
+.avail i{width:6px;height:6px;border-radius:50%;background:var(--g)}
 
-.page{position:relative;z-index:1;padding:40px 24px 60px;display:flex;flex-direction:column;align-items:center}
+/* trust strip */
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
+.trust div{background:rgba(12,16,32,.7);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center}
+.trust svg{width:18px;height:18px;color:var(--blue2);margin-bottom:4px}
+.trust p{font-size:12px;color:var(--m);line-height:1.3}
 
-/* ── AVATAR ── */
-.avatar-wrap{position:relative;width:88px;height:88px;margin-bottom:16px;animation:fadeUp .8s ease forwards .1s;opacity:0}
-.avatar-ring{position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,conic-gradient(#4A8ED4,#1A3A8A,#4A8ED4) border-box}
-.avatar-ring-spin{position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;background:linear-gradient(var(--bg),var(--bg)) padding-box,conic-gradient(transparent 60%,#4A8ED4 100%) border-box;animation:spin 4s linear infinite}
-.avatar-img{position:absolute;inset:3px;border-radius:50%;background:linear-gradient(135deg,#1A3A8A,#2A5298);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.avatar-letters{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;letter-spacing:-1px}
+/* sections */
+.label{display:flex;align-items:center;gap:12px;margin:40px 0 14px;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--d);font-weight:600}
+.label::after{content:"";flex:1;height:1px;background:var(--line)}
 
-/* ── NAME ── */
-.name{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--white);letter-spacing:.5px;text-align:center;margin-bottom:4px;animation:fadeUp .8s ease forwards .2s;opacity:0}
-.name span{color:var(--blue3)}
-.role{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;animation:fadeUp .8s ease forwards .25s;opacity:0}
+/* featured */
+.feat{display:block;text-decoration:none;color:inherit;border-radius:20px;padding:1px;
+  background:linear-gradient(135deg,rgba(125,179,240,.7),rgba(42,82,152,.2) 45%,rgba(125,179,240,.35));
+  transition:transform .2s ease,box-shadow .2s ease}
+.feat-in{border-radius:19px;padding:22px;background:linear-gradient(160deg,#111B36,#0A0E1C 70%);position:relative;overflow:hidden}
+.feat-in::before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(rgba(74,142,212,.3),transparent 70%)}
+.feat:hover{transform:translateY(-2px);box-shadow:0 18px 40px -16px rgba(74,142,212,.5)}
+.tag{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue3);
+  background:rgba(74,142,212,.12);border:1px solid rgba(74,142,212,.3);padding:4px 10px;border-radius:99px}
+.feat h2{font-family:Syne,sans-serif;font-size:22px;font-weight:700;margin:14px 0 6px;letter-spacing:-.01em}
+.feat p{color:var(--m);font-size:14.5px;max-width:340px}
+.feat ul{list-style:none;margin:14px 0 18px;display:grid;gap:6px}
+.feat li{display:flex;gap:8px;align-items:center;font-size:13.5px;color:var(--m)}
+.feat li svg{width:16px;height:16px;color:var(--g);flex:none}
+.feat-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative}
+.price{font-family:Syne,sans-serif;font-weight:700;font-size:26px}
+.price small{display:block;font-family:"DM Sans";font-size:11.5px;font-weight:500;color:var(--d);letter-spacing:.04em}
+.btn-sm{display:inline-flex;align-items:center;gap:8px;background:var(--w);color:#0A0E1C;font-weight:600;font-size:14px;padding:11px 16px;border-radius:12px;white-space:nowrap}
+.btn-sm svg{width:16px;height:16px}
 
-/* Badge */
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(74,142,212,.08);border:1px solid rgba(74,142,212,.2);border-radius:100px;padding:5px 14px;margin-bottom:24px;animation:fadeUp .8s ease forwards .3s;opacity:0}
-.badge-dot{width:5px;height:5px;border-radius:50%;background:#4A8ED4;animation:blink 2s ease infinite}
-.badge-txt{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#4A8ED4}
+/* list cards */
+.list{display:grid;gap:10px}
+.card{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
+  padding:14px 14px 14px 14px;border-radius:var(--r);background:rgba(11,15,29,.8);border:1px solid var(--line);
+  transition:border-color .2s,background .2s,transform .2s}
+.card:hover{border-color:var(--line2);background:rgba(16,22,42,.9);transform:translateY(-1px)}
+.ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;
+  background:rgba(74,142,212,.1);border:1px solid rgba(74,142,212,.2);color:var(--blue3)}
+.ic svg{width:21px;height:21px}
+.card .t{flex:1;min-width:0}
+.card h3{font-size:15.5px;font-weight:600;line-height:1.3}
+.card p{font-size:13px;color:var(--m);margin-top:2px}
+.pr{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--w);background:var(--s2);border:1px solid var(--line);padding:3px 9px;border-radius:7px;white-space:nowrap}
+.pr.q{color:var(--blue3);font-weight:500}
+.arw{width:16px;height:16px;color:var(--d);flex:none;transition:transform .2s,color .2s}
+.card:hover .arw{transform:translateX(3px);color:var(--blue3)}
 
-/* Divider */
-.divider{display:flex;align-items:center;gap:8px;width:100%;margin-bottom:24px;animation:fadeUp .8s ease forwards .35s;opacity:0}
-.div-line{flex:1;height:.5px;background:linear-gradient(to right,transparent,var(--border),transparent)}
-.div-logo{width:28px;height:28px;flex-shrink:0}
+/* steps */
+.steps{display:grid;gap:10px}
+.step{display:flex;gap:14px;padding:16px;border-radius:var(--r);background:rgba(11,15,29,.6);border:1px solid var(--line)}
+.num{font-family:Syne,sans-serif;font-weight:800;font-size:13px;color:var(--blue3);width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:rgba(74,142,212,.1);flex:none}
+.step h4{font-size:15px;font-weight:600}
+.step p{font-size:13.5px;color:var(--m);margin-top:2px}
 
-/* ── LINKS ── */
-.links{width:100%;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+/* quote */
+blockquote{margin-top:40px;padding:24px 22px;border-radius:20px;border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(17,27,54,.7),rgba(10,14,28,.7));position:relative}
+blockquote svg{width:26px;height:26px;color:var(--blue2);opacity:.7;margin-bottom:8px}
+blockquote p{font-family:Syne,sans-serif;font-size:18px;font-weight:600;line-height:1.4;letter-spacing:-.01em}
+blockquote p span{color:var(--blue3)}
+blockquote cite{display:block;margin-top:12px;font-style:normal;font-size:13px;color:var(--d)}
 
-.btn{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:8px;text-decoration:none;transition:all .25s ease;opacity:0}
-.btn:nth-child(1){animation:fadeUp .8s ease forwards .4s}
-.btn:nth-child(2){animation:fadeUp .8s ease forwards .5s}
-.btn:nth-child(3){animation:fadeUp .8s ease forwards .6s}
+/* cta */
+.cta{display:flex;align-items:center;gap:14px;margin-top:40px;text-decoration:none;color:#04210F;
+  background:var(--wa);border-radius:18px;padding:16px 18px;box-shadow:0 16px 36px -14px rgba(37,211,102,.55);transition:transform .2s,filter .2s}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.cta .ic{background:rgba(4,33,15,.12);border:none;color:#04210F}
+.cta h3{font-size:16.5px;font-weight:700}
+.cta p{font-size:13px;opacity:.8}
+.cta .arw{color:#04210F}
 
-.btn:hover{transform:translateX(4px)}
+footer{margin-top:36px;text-align:center}
+.ig{display:inline-flex;align-items:center;gap:8px;color:var(--m);text-decoration:none;font-size:14px;font-weight:500;padding:10px 16px;border:1px solid var(--line);border-radius:99px;transition:color .2s,border-color .2s}
+.ig:hover{color:var(--w);border-color:var(--line2)}
+.ig svg{width:17px;height:17px}
+.copy{margin-top:22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--d)}
 
-.btn-primary{background:linear-gradient(135deg,#0C1830,#162040);border:1px solid rgba(74,142,212,.3)}
-.btn-secondary{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
-.btn-wa{background:linear-gradient(135deg,#071510,rgba(37,211,102,.08));border:1px solid rgba(37,211,102,.25)}
+/* sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:linear-gradient(transparent,rgba(6,8,16,.95) 35%);display:flex;justify-content:center;
+  transform:translateY(110%);transition:transform .3s ease;z-index:10}
+.sticky.on{transform:none}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:480px;
+  background:var(--wa);color:#04210F;font-weight:700;font-size:15px;text-decoration:none;padding:14px;border-radius:14px;
+  box-shadow:0 10px 30px -10px rgba(37,211,102,.6)}
+.sticky svg{width:20px;height:20px}
 
-.btn-icon{width:36px;height:36px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.btn-primary .btn-icon{background:rgba(74,142,212,.15)}
-.btn-secondary .btn-icon{background:rgba(255,255,255,.06)}
-.btn-wa .btn-icon{background:rgba(37,211,102,.12)}
-
-.btn-body{flex:1}
-.btn-title{font-size:13px;font-weight:500;color:var(--white);display:block}
-.btn-desc{font-size:11px;color:var(--muted);display:block;margin-top:1px}
-.btn-arr{font-size:13px;color:rgba(74,142,212,.5)}
-
-/* ── SERVIÇOS ── */
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;margin-bottom:28px;animation:fadeUp .8s ease forwards .65s;opacity:0}
-.svc{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;padding:12px 8px;text-align:center;transition:border-color .2s}
-.svc:hover{border-color:rgba(74,142,212,.3)}
-.svc-icon{font-size:18px;display:block;margin-bottom:6px}
-.svc-label{font-size:9.5px;color:var(--muted);letter-spacing:.5px;line-height:1.4}
-
-/* ── DEPOIMENTOS ── */
-.reviews-title{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;animation:fadeUp .8s ease forwards .7s;opacity:0}
-
-.reviews{width:100%;display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
-.review{background:rgba(255,255,255,.025);border:.5px solid var(--border);border-left:2px solid #2A5298;border-radius:0 6px 6px 0;padding:12px 14px;opacity:0}
-.review:nth-child(1){animation:fadeUp .8s ease forwards .75s}
-.review:nth-child(2){animation:fadeUp .8s ease forwards .85s}
-.review:nth-child(3){animation:fadeUp .8s ease forwards .95s}
-
-.review-top{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-.review-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;flex-shrink:0;font-family:'Syne',sans-serif}
-.av1{background:rgba(74,142,212,.2);color:#4A8ED4}
-.av2{background:rgba(37,211,102,.15);color:#25D366}
-.av3{background:rgba(212,175,55,.15);color:#D4AF37}
-.review-info{flex:1}
-.review-name{font-size:12px;font-weight:500;color:var(--white);display:block}
-.review-role{font-size:10px;color:var(--muted);display:block}
-.review-stars{font-size:10px;color:#D4AF37;letter-spacing:1px}
-.review-text{font-size:12px;color:var(--muted);line-height:1.65;font-style:italic}
-.review-text strong{color:var(--white);font-style:normal;font-weight:500}
-
-/* ── FOOTER ── */
-.footer{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:1.5px;text-transform:uppercase;animation:fadeUp .8s ease forwards 1.05s;opacity:0}
-
-/* ── LOGO SVG ── */
-.logo-svg .d{fill:#1A3A8A}
-.logo-svg .j{fill:#555}
-.logo-svg .net-line{stroke:#4A8ED4;stroke-width:1.5;fill:none}
-.logo-svg .net-dot{fill:#4A8ED4}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+/* reveal */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.status i{animation:none}}
+@media (max-width:380px){h1{font-size:29px}.feat-foot{flex-direction:column;align-items:flex-start}}
+a:focus-visible{outline:2px solid var(--blue3);outline-offset:3px}
 </style>
 </head>
 <body>
-<div class="page">
+<div class="bg"></div>
 
-  <!-- AVATAR -->
-  <div class="avatar-wrap">
-    <div class="avatar-ring"></div>
-    <div class="avatar-ring-spin"></div>
-    <div class="avatar-img">
-      <svg class="logo-svg" viewBox="0 0 80 60" width="60" height="45">
-        <!-- D -->
-        <path class="d" d="M4 6h14c10 0 17 7 17 18s-7 18-17 18H4V6zm8 8v20h6c5 0 9-4 9-10s-4-10-9-10h-6z"/>
-        <!-- J -->
-        <path class="j" d="M46 6h8v28c0 4-3 8-9 8-5 0-8-3-8-7h7c0 1.5.5 2 1 2s1-.5 1-2V6z"/>
-        <!-- network -->
-        <line class="net-line" x1="36" y1="24" x2="44" y2="18"/>
-        <line class="net-line" x1="36" y1="24" x2="44" y2="30"/>
-        <line class="net-line" x1="44" y1="18" x2="52" y2="24"/>
-        <line class="net-line" x1="44" y1="30" x2="52" y2="24"/>
-        <line class="net-line" x1="44" y1="18" x2="44" y2="30"/>
-        <line class="net-line" x1="36" y1="24" x2="52" y2="24"/>
-        <circle class="net-dot" cx="36" cy="24" r="2.5"/>
-        <circle class="net-dot" cx="44" cy="18" r="2"/>
-        <circle class="net-dot" cx="44" cy="30" r="2"/>
-        <circle class="net-dot" cx="52" cy="24" r="2.5"/>
+<main class="wrap">
+  <header class="rv">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="64" y2="64"><stop stop-color="#7DB3F0"/><stop offset="1" stop-color="#2A5298"/></linearGradient></defs>
+        <path d="M10 14h12c10 0 17 7 17 18s-7 18-17 18H10V14Z" stroke="url(#lg)" stroke-width="5.5" stroke-linejoin="round"/>
+        <path d="M49 14v24c0 7-4 12-11 12" stroke="#F0F4FF" stroke-width="5.5" stroke-linecap="round"/>
+        <circle cx="49" cy="14" r="3.2" fill="#F0F4FF"/>
       </svg>
+      <span class="status" title="Disponível"><i></i></span>
     </div>
-  </div>
+    <h1>Diego <span>Justo</span></h1>
+    <div class="role">Design &amp; IA · Marketing Digital</div>
+    <p class="pitch">Crio <b>páginas, automações e campanhas</b> que transformam visitantes em clientes — feitas sob medida para o seu negócio vender mais.</p>
+    <div class="avail"><i></i>Agenda aberta para novos projetos</div>
 
-  <!-- NAME -->
-  <h1 class="name">Diego <span>Justo</span></h1>
-  <p class="role">Design & IA · Marketing Digital</p>
-
-  <div class="badge">
-    <span class="badge-dot"></span>
-    <span class="badge-txt">DJusto Creative</span>
-  </div>
-
-  <!-- DIVIDER -->
-  <div class="divider">
-    <div class="div-line"></div>
-    <svg class="div-logo" viewBox="0 0 28 28">
-      <circle cx="14" cy="14" r="13" fill="none" stroke="rgba(74,142,212,.3)" stroke-width="1"/>
-      <text x="14" y="19" text-anchor="middle" font-size="11" font-weight="700" font-family="sans-serif" fill="#4A8ED4">DJ</text>
-    </svg>
-    <div class="div-line"></div>
-  </div>
-
-  <!-- LINKS -->
-  <div class="links">
-
-    <a href="https://djustoiatp.github.io/biopage" class="btn btn-primary" target="_blank">
-      <div class="btn-icon">🚀</div>
-      <div class="btn-body">
-        <span class="btn-title">Bio Page Exclusiva</span>
-        <span class="btn-desc">Transforme o link da sua bio · R$97</span>
+    <div class="trust">
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9L12 3z"/></svg>
+        <p>100% personalizado</p>
       </div>
-      <span class="btn-arr">→</span>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <p>Entrega ágil</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+        <p>Foco em conversão</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Destaque -->
+  <div class="label rv">Destaque</div>
+  <a class="feat rv" data-msg="Olá Diego! Vi sua bio e quero uma *Landing Page que Vende* para o meu negócio." href="https://wa.me/5581998011476">
+    <div class="feat-in">
+      <span class="tag">Mais procurado</span>
+      <h2>Landing Page que Vende</h2>
+      <p>Página exclusiva, rápida e pensada para converter tráfego em contato e venda.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Copy e design estratégicos</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Otimizada para celular e anúncios</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Botão direto para o seu WhatsApp</li>
+      </ul>
+      <div class="feat-foot">
+        <div class="price"><small>Investimento</small>R$ 997</div>
+        <span class="btn-sm">Quero a minha
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </div>
+  </a>
+
+  <!-- Serviços -->
+  <div class="label rv">Soluções</div>
+  <div class="list">
+    <a class="card rv" data-msg="Olá Diego! Tenho interesse na *Bio Page Exclusiva*." href="https://wa.me/5581998011476">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+      <span class="t"><h3>Bio Page Exclusiva</h3><p>Link da bio com a cara da sua marca</p><span class="pr">R$ 197</span></span>
+      <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
     </a>
-
-    <a href="https://instagram.com/djustocreative.ia" class="btn btn-secondary" target="_blank">
-      <div class="btn-icon">📸</div>
-      <div class="btn-body">
-        <span class="btn-title">Instagram</span>
-        <span class="btn-desc">@djustocreative.ia · Design & IA</span>
-      </div>
-      <span class="btn-arr">→</span>
+    <a class="card rv" data-msg="Olá Diego! Quero saber mais sobre o *Chatbot* para o meu negócio." href="https://wa.me/5581998011476">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 7V4"/><circle cx="12" cy="3.5" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M2 12v3M22 12v3"/></svg></span>
+      <span class="t"><h3>Chatbot para o seu Negócio</h3><p>Atende e vende 24h no automático</p><span class="pr q">Sob consulta</span></span>
+      <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
     </a>
-
-    <a href="https://wa.me/5581998011476?text=Ol%C3%A1+Diego%21+Vi+seu+perfil+e+quero+saber+mais." class="btn btn-wa" target="_blank">
-      <div class="btn-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-      </div>
-      <div class="btn-body">
-        <span class="btn-title">Falar com Diego</span>
-        <span class="btn-desc">(81) 99801-1476 · Resposta rápida</span>
-      </div>
-      <span class="btn-arr">→</span>
+    <a class="card rv" data-msg="Olá Diego! Quero o *Cardápio Digital* para o meu restaurante." href="https://wa.me/5581998011476">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v8a2 2 0 0 0 2 2v8M9 3v8a2 2 0 0 1-2 2M7 3v6"/><path d="M17 21V3c-2 1-3 4-3 8h3"/></svg></span>
+      <span class="t"><h3>Cardápio Digital</h3><p>Para restaurantes · exclusivo e personalizado</p><span class="pr">R$ 197</span></span>
+      <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
     </a>
-
+    <a class="card rv" data-msg="Olá Diego! Quero falar sobre *Tráfego Pago (Meta Ads)*." href="https://wa.me/5581998011476">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+      <span class="t"><h3>Tráfego Pago</h3><p>Meta Ads que geram resultado real</p><span class="pr q">Sob consulta</span></span>
+      <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    <a class="card rv" data-msg="Olá Diego! Quero *Designs e Posts Estratégicos* para o meu Instagram." href="https://wa.me/5581998011476">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></span>
+      <span class="t"><h3>Designs &amp; Posts Estratégicos</h3><p>Artes e carrosséis que vendem</p><span class="pr q">Sob consulta</span></span>
+      <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
   </div>
 
-  <!-- SERVIÇOS -->
-  <div class="services">
-    <div class="svc"><span class="svc-icon">🎨</span><span class="svc-label">Bio Page Exclusiva</span></div>
-    <div class="svc"><span class="svc-icon">🤖</span><span class="svc-label">Design com IA</span></div>
-    <div class="svc"><span class="svc-icon">📈</span><span class="svc-label">Tráfego Pago</span></div>
+  <!-- Produto digital -->
+  <div class="label rv">Produto digital</div>
+  <a class="card rv" data-msg="Olá Diego! Quero o pack *+100 Prompts para Negócios* (R$37)." href="https://wa.me/5581998011476">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+    <span class="t"><h3>+100 Prompts para Negócios</h3><p>IA aplicada para vender e produzir mais</p><span class="pr">R$ 37</span></span>
+    <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+  </a>
+
+  <!-- Como funciona -->
+  <div class="label rv">Como funciona</div>
+  <div class="steps">
+    <div class="step rv"><span class="num">01</span><div><h4>Conversa rápida</h4><p>Você me chama no WhatsApp e conta o objetivo do seu negócio.</p></div></div>
+    <div class="step rv"><span class="num">02</span><div><h4>Criação sob medida</h4><p>Desenvolvo a solução com design, copy e estratégia alinhados à sua marca.</p></div></div>
+    <div class="step rv"><span class="num">03</span><div><h4>Entrega e ajustes</h4><p>Você recebe pronto para usar, com suporte para ajustes finais.</p></div></div>
   </div>
 
-  <!-- DEPOIMENTOS -->
-  <p class="reviews-title">⭐ o que dizem os clientes</p>
+  <blockquote class="rv">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 6C6.5 7 4 9.6 4 13.5V18h6v-6H7c0-2.3 1.4-3.8 3.2-4.4L9.5 6zm10 0c-3 1-5.5 3.6-5.5 7.5V18h6v-6h-3c0-2.3 1.4-3.8 3.2-4.4L19.5 6z"/></svg>
+    <p>Não vendo serviço — <span>entrego resultado.</span> Do design à conversão, cada solução é feita para o seu negócio vender mais.</p>
+    <cite>— Diego Justo, DJusto Creative</cite>
+  </blockquote>
 
-  <div class="reviews">
+  <a id="mainCta" class="cta rv" data-msg="Olá Diego! Vim pela sua bio e quero conversar sobre um projeto." href="https://wa.me/5581998011476">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.2 1.2z"/></svg></span>
+    <span class="t"><h3>Falar com Diego</h3><p>(81) 99801-1476 · resposta rápida</p></span>
+    <svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
 
-    <div class="review">
-      <div class="review-top">
-        <div class="review-av av1">MC</div>
-        <div class="review-info">
-          <span class="review-name">Mariana Costa</span>
-          <span class="review-role">Salão Studio M · Recife</span>
-        </div>
-        <span class="review-stars">★★★★★</span>
-      </div>
-      <p class="review-text">"Pedi na sexta e na sábado já tava no ar. <strong>Minha página ficou completamente diferente</strong> — vários clientes comentaram na semana seguinte."</p>
-    </div>
+  <footer class="rv">
+    <a class="ig" href="https://instagram.com/djustocreative.ia" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      @djustocreative.ia
+    </a>
+    <div class="copy">DJusto Creative · Design &amp; IA · © <span id="y">2026</span></div>
+  </footer>
+</main>
 
-    <div class="review">
-      <div class="review-top">
-        <div class="review-av av2">RL</div>
-        <div class="review-info">
-          <span class="review-name">Ricardo Lima</span>
-          <span class="review-role">Barbearia RL · Olinda</span>
-        </div>
-        <span class="review-stars">★★★★★</span>
-      </div>
-      <p class="review-text">"Simples, rápido e com a cara do meu negócio. <strong>Vale muito mais do que cobrou.</strong> Já indiquei pra dois amigos."</p>
-    </div>
-
-    <div class="review">
-      <div class="review-top">
-        <div class="review-av av3">FS</div>
-        <div class="review-info">
-          <span class="review-name">Fernanda Silva</span>
-          <span class="review-role">Doces & Cia · Caruaru</span>
-        </div>
-        <span class="review-stars">★★★★★</span>
-      </div>
-      <p class="review-text">"Achei que ia ser complicado mas foi só mandar as infos. <strong>Em menos de 24h tava tudo pronto</strong> e ficou lindo demais."</p>
-    </div>
-
-  </div>
-
-  <!-- FOOTER -->
-  <p class="footer">djusto creative · design & ia</p>
-
+<div class="sticky" id="sticky">
+  <a data-msg="Olá Diego! Vim pela sua bio e quero conversar sobre um projeto." href="https://wa.me/5581998011476">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.3-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.2 1.2z"/></svg>
+    Pedir orçamento no WhatsApp
+  </a>
 </div>
+
+<script>
+(function(){
+  var PHONE = "5581998011476";
+  document.querySelectorAll("a[data-msg]").forEach(function(a){
+    a.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(a.getAttribute("data-msg"));
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  // reveal on scroll
+  var els = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    },{threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add("in"); }); }
+
+  // sticky CTA: aparece após o topo e some quando o CTA principal está visível
+  var sticky = document.getElementById("sticky"), main = document.getElementById("mainCta"), ctaVisible = false;
+  if ("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){ ctaVisible = es[0].isIntersecting; upd(); }).observe(main);
+  }
+  function upd(){ sticky.classList.toggle("on", window.scrollY > 380 && !ctaVisible); }
+  window.addEventListener("scroll", upd, {passive:true});
+})();
+</script>
 </body>
 </html>
